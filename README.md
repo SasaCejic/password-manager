@@ -91,7 +91,7 @@ If you want to use this in production, consider:
 ## 📸 Screenshot
 
 <p align="center">
-  <img src="logo.png" alt="Password Manager Logo" width="150"/>
+  <img src="screenshot.png" alt="Password Manager Logo" width="150"/>
 </p>
 
 ---
