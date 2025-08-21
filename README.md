@@ -1,25 +1,29 @@
 ﻿# 🔐 Password Manager
 
-A simple **Password Manager** built with Python and Tkinter.  
-This application allows users to **generate secure random passwords**, save them along with the website and username/email, and copy them to the clipboard for quick use.  
+A secure **Password Manager** built with **Python** and **Tkinter**.  
+This application allows users to **generate strong passwords**, store them safely in a **JSON file**, and easily retrieve them later.
 
 ---
 
 ## ✨ Features
 
 - **Password Generator**  
-  - Creates strong, random passwords with a mix of letters, numbers, and symbols.
-  - Passwords are automatically copied to your clipboard for convenience.
+  - Creates strong, random passwords with a mix of letters, numbers, and symbols.  
+  - Passwords are automatically copied to your clipboard for convenience.  
 
 - **Save Credentials**  
-  - Stores website, email/username, and password in a local `data.txt` file.
-  - Ensures no empty fields before saving.
-  - Confirms details with the user before writing to file.
+  - Stores website, email/username, and password in a `data.json` file.  
+  - Confirms details with the user before saving.  
+  - Prevents accidental overwrites by merging data when the same website already exists.  
+
+- **Search Functionality**  
+  - Quickly retrieve saved credentials by typing the website name.  
+  - Displays stored email/username and password in a pop-up.  
 
 - **Simple UI**  
-  - Built with **Tkinter** for a clean and functional interface.
-  - Includes input fields for website, email/username, and password.
-  - One-click password generation and save functionality.
+  - Built with **Tkinter** for an intuitive interface.  
+  - Includes input fields for website, email/username, and password.  
+  - Buttons for password generation, saving, and searching.  
 
 ---
 
@@ -28,6 +32,7 @@ This application allows users to **generate secure random passwords**, save them
 - [Python 3](https://www.python.org/)  
 - [Tkinter](https://docs.python.org/3/library/tkinter.html) – for the graphical user interface  
 - [Pyperclip](https://pypi.org/project/pyperclip/) – for copying passwords to clipboard  
+- [JSON](https://docs.python.org/3/library/json.html) – for secure data storage  
 
 ---
 
@@ -35,10 +40,13 @@ This application allows users to **generate secure random passwords**, save them
 
 ```
 .
-├── logo.png          # App logo displayed in the UI
-├── data.txt          # Saved credentials (created automatically)
-├── main.py           # Main application file (your script)
-└── README.md         # Project documentation
+├── data.json          # Stores saved credentials securely
+├── logo.png           # App logo displayed in the UI
+├── screenshot.png     # Screenshot of the app UI
+├── main.py            # Main application file
+├── requirements.txt   # Dependencies
+├── LICENSE
+└── README.md          # Project documentation
 ```
 
 ---
@@ -52,9 +60,8 @@ cd password-manager
 ```
 
 ### 2. Install Dependencies
-Make sure you have Python 3 installed. Then install required packages:
 ```bash
-pip install pyperclip
+pip install -r requirements.txt
 ```
 
 ### 3. Run the Application
@@ -69,45 +76,42 @@ python main.py
 1. Enter the **Website** and **Email/Username**.  
 2. Click **Generate Password** to create a random secure password.  
    - The password will also be copied to your clipboard.  
-3. Click **Add** to save the credentials to `data.txt`.  
-4. Credentials are stored in the following format:
-   ```
-   Website  |   Email/Username  |   Password
-   ```
-
----
-
-## ⚠️ Disclaimer
-
-This project is for **educational purposes** only.  
-The data is saved in plain text (`data.txt`), which is **not secure for real-world use**.  
-If you want to use this in production, consider:
-- Encrypting stored credentials
-- Using a secure database or password vault
-- Adding authentication before accessing saved data
+3. Click **Add** to save the credentials into `data.json`.  
+4. Use the **Search** button to retrieve stored credentials for a specific website.  
 
 ---
 
 ## 📸 Screenshot
 
 <p align="center">
-  <img src="screenshot.png" alt="Password Manager Logo" width="150"/>
+  <img src="screenshot.png" alt="Password Manager Screenshot" width="400"/>
 </p>
+
+---
+
+## ⚠️ Disclaimer
+
+This project is for **educational purposes** only.  
+Although credentials are saved in JSON instead of plain text, this is **not fully secure** for production use.  
+For real-world applications, consider:  
+- Encrypting stored data  
+- Using a secure database or password vault  
+- Adding authentication before accessing saved data  
 
 ---
 
 ## 📌 Future Improvements
 
-- Implement search functionality for saved credentials.  
 - Encrypt stored passwords.  
+- Add master password protection.  
 - Improve UI/UX with themes.  
-- Add delete/edit functionality for saved records.
+- Add option to delete or edit saved credentials.  
 
 ---
 
 ## 👨‍💻 Author
 
-Developed by **Saša Ćejić**  
+Developed by **Saša Čejić**  
 📧 Contact: cejicsasa17@gmail.com  
 
 ---
@@ -116,5 +120,3 @@ Developed by **Saša Ćejić**
 
 This project is licensed under the MIT License.  
 Feel free to use and modify for personal or educational purposes.
-
-
